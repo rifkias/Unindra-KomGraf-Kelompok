@@ -34,8 +34,8 @@ public class DrawShape extends JPanel{
         outerBox(g2);
         colorRoad(g2);
         createRoad(g2);
-        drawGrassPatch(g2,40,700);
-        drawGrassPatch(g2,50,700);
+        createGrass(g2);
+        createBuilding(g2);
     }
      
      protected void createRoad(Graphics2D g){
@@ -104,46 +104,188 @@ public class DrawShape extends JPanel{
         roadCorner1.lineTo(1195, 570); 
         roadCorner1.lineTo(680, 570); 
         roadCorner1.quadTo(690,590,700,600);
-//        roadCorner1.quadTo(630,630,620,670);
+        
         g.setColor(Color.BLACK);
         g.fill(roadCorner1);
         
         g.drawLine(5,530,1195,530);
 
-        
-//        g.setColor(Color.BLUE);
-//         g.drawLine(530,770,580,770);
-//         g.drawLine(580,680,620,680);
-//         g.drawLine(560,770,580,560);
-//         g.drawLine(850,680,755,640);
-//         g.drawLine(720,640,755,640);
-//         g.drawLine(810,680,720,640);
-
-
          
      }
-      private void drawGrassPatch(Graphics2D g2d, int x, int y) {
-        g2d.setColor(new Color(34, 139, 34)); // Grass green color
-
+     protected void createGrass(Graphics2D g){
+        g.setColor(Color.GREEN);
         GeneralPath grass = new GeneralPath();
-        
-        // Draw curved blades of grass using a path
-        grass.moveTo(x, y);
-        grass.curveTo(x - 10, y - 20, x - 10, y - 40, x, y - 50); // Left blade
-        grass.curveTo(x + 10, y - 40, x + 10, y - 20, x + 20, y); // Right blade
-        grass.curveTo(x + 10, y - 15, x + 5, y - 15, x, y); // Bottom curve
-
-        g2d.fill(grass);
-
-        // Add more blades next to the first
+        grass.moveTo(30,725);
+        grass.curveTo(20,705,20,665,15,675);
+        grass.curveTo(32,680,35,700,30,725);
+         
+        g.fill(grass);
         grass.reset();
-        grass.moveTo(x + 20, y);
-        grass.curveTo(x + 10, y - 15, x + 15, y - 40, x + 30, y - 45); // Left blade of next patch
-        grass.curveTo(x + 35, y - 40, x + 35, y - 15, x + 40, y); // Right blade
-        grass.curveTo(x + 15, y - 15, x + 25, y - 15, x + 20, y); // Bottom curve
+        
+        grass.moveTo(30,725);
+        grass.curveTo(43,690,42,680,45,670);
+        grass.curveTo(50,710,47,720,30,725);
+        g.fill(grass);
+        grass.reset();
+        
+        
+        grass.moveTo(35,725);
+        grass.curveTo(50,680,50,680,75,670);
+        grass.curveTo(50,700,60,690,40,725);
+        g.fill(grass);
+        grass.reset();
+        
+        // Grass 2
+        grass.moveTo(1140,715);
+        grass.curveTo(1125,680,1130,665,1130,670);
+        grass.curveTo(1140,680,1140,700,1140,715);
+         
+        g.fill(grass);
+        grass.reset();
+//Tangkai Bunga
+//        g.setColor(new Color(242, 194, 0));
+//        grass.moveTo(1143,710);
+//        grass.curveTo(1137,665,1135,665,1145,630);
+//        g.fill(grass);
+//        grass.reset();
 
-        g2d.fill(grass);
-    }
+//        Daun
+        g.setColor(Color.GREEN);
+        grass.moveTo(1140,715);
+        grass.curveTo(1143,680,1145,665,1160,670);
+        grass.curveTo(1150,690,1140,700,1145,715);
+//         
+        g.fill(grass);
+        grass.reset();
+//        
+//        g.setColor(Color.RED);
+//        g.fillOval(1107,624, 80, 10);
+//        
+//        g.fillOval(1143,594, 10, 80);
+        
+        
+//        g.setColor(new Color(110, 240, 105));
+//        drawCenteredCircle(g,1145,630,30);
+//        grass.moveTo(1117,600);
+//        grass.curveTo(1135,630,1135,630,1175,655);
+//        g.fill(grass);
+//        grass.moveTo(30,725);
+//        grass.curveTo(43,690,42,680,45,670);
+//        grass.curveTo(50,710,47,720,30,725);
+//        g.fill(grass);
+//        grass.reset();
+//        
+//        
+//        grass.moveTo(35,725);
+//        grass.curveTo(50,680,50,680,75,670);
+//        grass.curveTo(50,700,60,690,40,725);
+//        g.fill(grass);
+//        grass.reset();
+         
+     } 
+     protected void createBuilding(Graphics2D g){
+        g.setColor(Color.BLACK);
+        GeneralPath path = new GeneralPath();
+//        Building 1 Side 1
+//         g.drawLine(590,500,380,485);
+//         g.drawLine(380,485,380,360);
+//         g.drawLine(590,500,590,320);
+//         g.drawLine(380,360,590,320);
+//         
+////         Building 1 Side 2
+//         g.drawLine(590,500,590,320);
+//         g.drawLine(590,500,725,465);
+//         g.drawLine(725,465,725,360);
+//         g.drawLine(590,320,725,360);
+
+//Building Over Line 1
+//        g.drawLine(590,320,360,363);
+//        g.drawLine(590,320,590,300);
+//        g.drawLine(590,300,360,340);
+//        g.drawLine(360,363,360,340);
+
+
+//        g.drawLine(590,320,740,363);
+//        g.drawLine(590,320,590,300);    
+//        g.drawLine(590,300,740,343);   
+//        g.drawLine(740,343,740,363);
+
+         
+        int[] XBuildingSide1 = {380,380,590,590};  
+        int[] YBuildingSide1 = {485,360,320,500};  
+        g.setColor(new Color(121, 156, 158));
+        g.drawPolygon(XBuildingSide1, YBuildingSide1, XBuildingSide1.length);
+        g.fillPolygon(XBuildingSide1, YBuildingSide1, XBuildingSide1.length);
+        
+        int[] XBuilding1Window1 = {405,405,565,565};  
+        int[] YBuilding1Window1 = {468,370,340,480};  
+        g.setColor(Color.BLACK);
+        g.drawPolygon(XBuilding1Window1, YBuilding1Window1, XBuilding1Window1.length);
+        g.setColor(Color.WHITE);
+        g.fillPolygon(XBuilding1Window1, YBuilding1Window1, XBuilding1Window1.length);
+        
+        g.setColor(Color.BLACK);
+        g.drawLine(455,363,455,470);
+        g.drawLine(475,358,475,474);
+        g.drawLine(495,353,495,474);
+//        g.drawLine(565,480,565,340);
+//        g.drawLine(405,370,565,340);
+//        g.drawLine(405,468,565,480);
+        
+        g.setColor(new Color(59, 96, 98));
+        int[] XBuilding1Side2 = {590,590,725,725};  
+        int[] YBuilding1Side2 = {500,320,360,465};  
+        g.drawPolygon(XBuilding1Side2, YBuilding1Side2, XBuilding1Side2.length);
+        g.fillPolygon(XBuilding1Side2, YBuilding1Side2, XBuilding1Side2.length);
+        
+        int[] XBuilding1Window2 = {615,615,710,710};  
+        int[] YBuilding1Window2 = {340,480,460,365};  
+        g.setColor(Color.BLACK);
+        g.drawPolygon(XBuilding1Window2, YBuilding1Window2, XBuilding1Window2.length);
+        g.setColor(Color.WHITE);
+        g.fillPolygon(XBuilding1Window2, YBuilding1Window2, XBuilding1Window2.length);
+        
+        
+        
+        g.setColor(Color.BLACK);
+        g.drawLine(665,353,665,470);
+        
+        
+        int[] XBuilding1Shadow1 = {363,377,377};  
+        int[] YBuilding1Shadow1 = {363,370,360};  
+        g.drawPolygon(XBuilding1Shadow1, YBuilding1Shadow1, 3);
+        g.fillPolygon(XBuilding1Shadow1, YBuilding1Shadow1, 3);
+        
+        int[] XBuilding1Shadow2 = {725,725,737};  
+        int[] YBuilding1Shadow2 = {370,360,364};  
+        g.drawPolygon(XBuilding1Shadow2, YBuilding1Shadow2, 3);
+        g.fillPolygon(XBuilding1Shadow2, YBuilding1Shadow2, 3);
+        
+        g.setColor(new Color(93, 127, 128));
+        int[] XBuilding1Line1 = {360,360,590,590};  
+        int[] YBuilding1Line1 = {360,355,315,320};  
+        g.drawPolygon(XBuilding1Line1, YBuilding1Line1, 4);
+        g.fillPolygon(XBuilding1Line1, YBuilding1Line1, 4);
+        
+         
+        g.setColor(new Color(41, 67, 69));
+        int[] XBuilding1Line2 = {590,590,740,740};  
+        int[] YBuilding1Line2 = {320,315,358,363};  
+        g.drawPolygon(XBuilding1Line2, YBuilding1Line2, 4);
+        g.fillPolygon(XBuilding1Line2, YBuilding1Line2, 4);
+        
+//        g.drawLine(739,364,725,370);
+//        g.drawLine(725,370,725,360);
+//        g.drawLine(725,360,739,364);
+//        g.drawLine(377,360,360,360);
+        
+     }
+     public void drawCenteredCircle(Graphics2D g, int x, int y, int r) {
+        x = x-(r/2);
+        y = y-(r/2);
+        System.out.println(x + "," + y);
+        g.fillOval(x,y,r,r);
+      }
      protected void colorRoad(Graphics2D g){
          // Coordinates for the polygon area to fill (example coordinates)
          

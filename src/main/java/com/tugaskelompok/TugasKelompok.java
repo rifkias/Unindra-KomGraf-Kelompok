@@ -19,7 +19,7 @@ public class TugasKelompok {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         
-        frame.setSize(1200, 800);
+        frame.setSize(1200, 850);
  // Add the custom JPanel (RectangleDrawer) to the frame
 //        DrawShape rectanglePanel = new DrawShape();
         frame.add(new DrawShape());
